@@ -19,8 +19,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pyinstaller
-        pyinstaller --onefile marketdata.py
-        pip install pylint
-    - name: Analysing the code with pylint
+    - name: Build Market Data Executable
       run: |
-        pylint $(git ls-files '*.py')
+        pyinstaller --onefile marketdata.py
+    - uses: actions/upload-artifact@v2
+      with:
+        name: name-of-artifact
+        path: src/dist/
