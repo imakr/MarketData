@@ -19,11 +19,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pyinstaller
-    - name: Build Market Data Executable
+    - name: Build Market Data
       run: |
         pyinstaller --onefile marketdata.py
     - name: Package
       uses: actions/upload-artifact@v3
       with:
-        name: name-of-artifact
+        name: marketdata
         path: dist/
