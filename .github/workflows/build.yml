@@ -23,7 +23,7 @@ jobs:
       run: |
         pyinstaller --onefile marketdata.py
     - name: Package
-    - uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: name-of-artifact
         path: dist/
