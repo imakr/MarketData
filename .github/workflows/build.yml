@@ -22,7 +22,8 @@ jobs:
     - name: Build Market Data Executable
       run: |
         pyinstaller --onefile marketdata.py
+    - name: Package
     - uses: actions/upload-artifact@v2
       with:
         name: name-of-artifact
-        path: src/dist/
+        path: dist/
