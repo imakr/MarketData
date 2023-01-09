@@ -307,6 +307,7 @@ class SmartWebSocketV2(object):
 
     def _parse_binary_data(self, binary_data):
         try:
+            print("{Using fixed parse binary function}",flush=True)
             parsed_data = {
                 "subscription_mode": self._unpack_data(binary_data, 0, 1, byte_format="B")[0],
                 "exchange_type": self._unpack_data(binary_data, 1, 2, byte_format="B")[0],
